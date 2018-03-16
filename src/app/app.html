@@ -1,1 +1,15 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu [content]="mycontent">
+  <ion-header>
+    <button ion-button menuToggle>
+      <ion-icon name="apps"></ion-icon>
+    </button>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <button ion-item>Home </button>
+      <button ion-item>Favoritos</button>
+      <button ion-item>Configurações</button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<ion-nav [root]="rootPage" #mycontent></ion-nav>

@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Pessoa } from '../pessoa/pessoa';
-import { Menu } from '../menu/menu';
-  
+import { ItemMenu } from '../itemMenu/itemMenu';
+ 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -13,7 +13,7 @@ export class HomePage {
   }
 
   public goToMenu() {
-    this.navCtrl.setRoot(Menu);
+    this.navCtrl.setRoot(ItemMenu);
   }
 
   public goToPessoa() {

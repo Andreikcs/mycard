@@ -7,21 +7,23 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { Pessoa } from '../pages/pessoa/pessoa';
-import { Menu} from '../pages/menu/menu';
+//import { Menu} from '../pages/menu/menu';
 import { PessoaFisica } from '../pages/pessoa_fisica/pessoa_fisica';
 import { PessoaJuridica } from '../pages/pessoa_juridica/pessoa_juridica';
-//import { Login } from '../pages/home/home';
+import { ItemMenu } from '../pages/itemMenu/itemMenu';
+import { Atendimento } from '../pages/atendimento/atendimento';
 
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    Menu,
+   //Menu,
     Pessoa,
     PessoaFisica,
     PessoaJuridica,
-  //  Login
+    ItemMenu,
+    Atendimento
   ],
   imports: [
     BrowserModule,
@@ -31,11 +33,13 @@ import { PessoaJuridica } from '../pages/pessoa_juridica/pessoa_juridica';
   entryComponents: [
     MyApp,
     HomePage,
-    Menu,
+    //Menu,
     Pessoa,
     PessoaFisica,
     PessoaJuridica,
-    //Login
+    ItemMenu,
+    Atendimento
+
       ],
   providers: [
     StatusBar,
@@ -43,4 +47,5 @@ import { PessoaJuridica } from '../pages/pessoa_juridica/pessoa_juridica';
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
+
 export class AppModule {}
