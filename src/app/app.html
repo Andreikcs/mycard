@@ -1,15 +1,18 @@
-<ion-menu [content]="mycontent">
+<ion-menu [content]="NAV">
   <ion-header>
-    <button ion-button menuToggle>
-      <ion-icon name="apps"></ion-icon>
-    </button>
-  </ion-header>
+    <title>my card</title>
+  </ion-header >
   <ion-content>
+     <img src="/assets/imgs/logo.png" alt="">
+     
     <ion-list>
-      <button ion-item>Home </button>
-      <button ion-item>Favoritos</button>
-      <button ion-item>Configurações</button>
+      <button color="dark" ion-item *ngFor="let page of getPages()" (click)="goToPage(page.component)" menuClose>
+        <ion-icon item-left name="{{ page.icon }}"></ion-icon>
+        {{page.titulo}}
+      </button>
     </ion-list>
   </ion-content>
 </ion-menu>
-<ion-nav [root]="rootPage" #mycontent></ion-nav>
+<ion-nav [root]="rootPage" #NAV></ion-nav>
+
+

@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+     Minha Empresa
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-item>
+    <ion-label color="primary" floating>Razão Social</ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary" floating>CNPJ</ion-label>
+    <ion-input type="text" ></ion-input>
+  </ion-item>
+<ion-item>
+  <ion-label color="primary" floating>Endereço</ion-label>
+  <ion-input type="text"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label color="primary" floating>Número</ion-label>
+  <ion-input type="text"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label color="primary" floating>Bairro</ion-label>
+  <ion-input type="text"></ion-input>
+</ion-item>
+<ion-list>
+  <ion-item>
+    <ion-label>Cidade</ion-label>
+    <ion-select [(ngModel)]="fsd">
+      <ion-option value="Universidade">Pato Branco</ion-option>
+      <ion-option value="Bancario">Francisco Beltrão</ion-option>
+      <ion-option value="OrtoBom">São Lourenço Do Oeste</ion-option>
+      <ion-option value="Hospital São Lucas">Curitiba</ion-option>
+    </ion-select>
+  </ion-item>
+  </ion-list>
+  <ion-item>
+    <ion-label color="primary" floating>Tel. Comercial</ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary" floating>Celular</ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary" floating>E-mail</ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary" floating>Login</ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary" floating>Senha</ion-label>
+    <ion-input type="password"></ion-input>
+  </ion-item>
+
+    <button ion-button block color="primary" round (click)="goToLogin">Salvar</button>
+   
+</ion-content>

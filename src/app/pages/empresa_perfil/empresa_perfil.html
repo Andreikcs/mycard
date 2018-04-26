@@ -1,0 +1,60 @@
+<ion-content padding>
+  <ion-header>
+    <ion-navbar>
+      <!--<button ion-button menuToggle> -->
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Home</ion-title>
+    </ion-navbar>
+    <ion-item>
+      <ion-label color="primary" floating>Nome</ion-label>
+      <ion-input type="text" [(ngModel)]="empresa.nome_razao"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" floating>CNPJ</ion-label>
+      <ion-input type="text" [(ngModel)]="empresa.cpf_cnpj"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" floating>Endereço</ion-label>
+      <ion-input type="text" [(ngModel)]="empresa.endereco"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" floating>Número</ion-label>
+      <ion-input type="text" [(ngModel)]="empresa.numero"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" floating>Bairro</ion-label>
+      <ion-input type="text"  [(ngModel)]="empresa.bairro"></ion-input>
+    </ion-item>
+    <ion-list>
+        <ion-item>
+          <ion-label>Cidade</ion-label>
+          <ion-select [(ngModel)]="empresa.cidade">
+            <ion-option *ngFor="let cidade of cidades" [value]="cidade">{{cidade.nome}}</ion-option>
+          </ion-select>
+        </ion-item>
+    </ion-list>
+    <ion-item>
+      <ion-label color="primary" floating>Tel. Comercial</ion-label>
+      <ion-input type="text" [(ngModel)]="empresa.telefone_comercial"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" floating>Celular</ion-label>
+      <ion-input type="text" [(ngModel)]="empresa.celular"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" floating>E-mail</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" floating>Login</ion-label>
+      <ion-input type="text" [(ngModel)]="empresa.login"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" floating>Senha</ion-label>
+      <ion-input type="text" [(ngModel)]="empresa.senha"></ion-input>
+    </ion-item>
+    <button ion-button block color="primary" round (click)="goToSave()">Salvar e Continuar</button>
+  </ion-header>
+</ion-content>

@@ -1,0 +1,16 @@
+<ion-content padding>
+  <ion-header>
+    <ion-navbar>
+      <!--<button ion-button menuToggle> -->
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Cadastro De Novo Setor</ion-title>
+    </ion-navbar>
+    <ion-item>
+      <ion-label color="primary" floating>Nome</ion-label>
+      <ion-input type="text"  [(ngModel)]="setor.setor"></ion-input>
+    </ion-item>
+      <button ion-button block color="primary" round (click)="goToSave()">Salvar</button>
+    </ion-header>
+</ion-content>

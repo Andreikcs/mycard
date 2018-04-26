@@ -1,0 +1,56 @@
+<ion-header>
+  <div>
+    <hr>
+  </div>
+</ion-header>
+<ion-content padding class="bg">
+  <ion-avatar item-start>
+    <img src="/assets/imgs/mycard.png" style="margin:auto;">
+  </ion-avatar>
+  <br>
+  <div>
+    <ion-item>
+      <ion-label color="primary" floating>Login</ion-label>
+      <ion-input color="primary" type="text" [(ngModel)]="pessoa.login"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="facebook" floating>Senha</ion-label>
+      <ion-input type="password" color="facebook" [(ngModel)]="pessoa.senha"></ion-input>
+    </ion-item>
+    <!--
+<p></p>
+<button ion-button block round (click)="goToMenu()">Entrar</button>
+<p></p> -->
+
+    <p></p>
+    <button ion-button block round (click)="goToLogar()">Entrar</button>
+    <p></p>
+    <div>
+      <button ion-button clear (click)="goToPessoa()">Cadastrar-se</button>
+    </div>
+  </div>
+
+</ion-content>
+
+<!--
+<ion-content padding>
+  <ion-grid>
+    <ion-row justify-content-center>
+      <img src="/assets/imgs/email.png" width="200" heigth="500"> logo 
+  <img src="/assets/imgs/gr.png" width="80" heigth="10">
+    </ion-row>
+    <ion-row>
+      <ion-list>
+        <ion-item>
+          <ion-label color="primary" floating>Login</ion-label>
+          <ion-input color="primary" type="text"></ion-input>
+          </ion-item>
+            <ion-item>
+          <ion-label color="primary" floating>Senha</ion-label>
+          <ion-input type="password"></ion-input>
+        </ion-item>
+      </ion-list>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+-->

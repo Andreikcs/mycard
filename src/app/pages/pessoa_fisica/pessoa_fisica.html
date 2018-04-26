@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Pessoa Fisíca
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-item>
+    <ion-label color="primary" floating>Nome</ion-label>
+    <ion-input type="text" [(ngModel)]="pessoa.nome_razao"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary" floating>Celular</ion-label>
+    <ion-input type="text" [(ngModel)]="pessoa.celular"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary" floating>E-mail</ion-label>
+    <ion-input type="text" [(ngModel)]="pessoa.email"></ion-input>
+  </ion-item>
+<ion-item>
+  <ion-label color="primary" floating>Login</ion-label>
+  <ion-input type="text" [(ngModel)]="pessoa.login"></ion-input>
+</ion-item>
+
+  <ion-item>
+    <ion-label color="primary" floating>Senha</ion-label>
+    <ion-input type="password" [(ngModel)]="pessoa.senha"></ion-input>
+  </ion-item>
+    <button ion-button block color="primary" round  (click)="goToSave()">Salvar</button>
+
+</ion-content>
