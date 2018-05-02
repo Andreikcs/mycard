@@ -1,49 +1,68 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-<head>
-  <meta charset="UTF-8">
-  <title>Ionic App</title>
-  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="format-detection" content="telephone=no">
-  <meta name="msapplication-tap-highlight" content="no">
-
-  <link rel="icon" type="image/x-icon" href="assets/icon/favicon.ico">
-  <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#4e8ef7">
-
-  <!-- add to homescreen for ios -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-
-  <!-- cordova.js required for cordova apps (remove if not needed) -->
-  <script src="cordova.js"></script>
-
-  <!-- un-comment this code to enable service worker
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('service-worker.js')
-        .then(() => console.log('service worker installed'))
-        .catch(err => console.error('Error', err));
-    }
-  </script>-->
-
-  <link href="build/main.css" rel="stylesheet">
-
-</head>
-<body>
-
-  <!-- Ionic's root component and where the app will load -->
-  <ion-app></ion-app>
-
-  <!-- The polyfills js is generated during the build process -->
-  <script src="build/polyfills.js"></script>
-
-  <!-- The vendor js is generated during the build process
-       It contains all of the dependencies in node_modules -->
-  <script src="build/vendor.js"></script>
-
-  <!-- The main bundle js is generated during the build process -->
-  <script src="build/main.js"></script>
-
-</body>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ivanhoinacki | Frontend Engieener</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A frontend developer, expert in AngularJS who lives in Brazil.">
+    <meta name="google-site-verification" content="rgmpRA4Etxga2hr5Sih2W0ujlKeWEdsTedKFI95kc_U"/>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,300,500,700,900" type="text/css">
+    <link rel="canonical" href="http://ivanhoinacki.github.io/">
+    <link rel="stylesheet" href="lib/normalize.css/normalize.css">
+    <link rel="stylesheet" href="app.css" media="screen" title="no title" charset="utf-8">
+  </head>
+  <body>
+    <ivanhoinacki>
+      <svg width='46px' height='46px' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="uil-ripple" style="position: absolute; left: 50%; top: 50%; bottom: 50%; right: 50%;">
+        <rect x="0" y="0" width="100" height="100" fill="none" class="bk"></rect>
+        <g>
+          <animate attributeName="opacity" dur="2s" repeatCount="indefinite" begin="0s" keyTimes="0;0.33;1" values="1;1;0"></animate>
+          <circle cx="50" cy="50" r="40" stroke="#afafb7" fill="none" stroke-width="6" stroke-linecap="round">
+            <animate attributeName="r" dur="2s" repeatCount="indefinite" begin="0s" keyTimes="0;0.33;1" values="0;22;44"></animate>
+          </circle>
+        </g>
+        <g>
+          <animate attributeName="opacity" dur="2s" repeatCount="indefinite" begin="1s" keyTimes="0;0.33;1" values="1;1;0"></animate>
+          <circle cx="50" cy="50" r="40" stroke="#a8a8a8" fill="none" stroke-width="6" stroke-linecap="round">
+            <animate attributeName="r" dur="2s" repeatCount="indefinite" begin="1s" keyTimes="0;0.33;1" values="0;22;44"></animate>
+          </circle>
+        </g>
+      </svg>     
+    </ivanhoinacki>
+    <script src="lib/@angular/bundles/angular2-polyfills.js"></script>
+    <script src="lib/systemjs/dist/system.src.js"></script>
+    <script src="lib/rxjs/bundles/Rx.js"></script>
+    <script src="lib/@angular/bundles/angular2.dev.js"></script>
+    <script src="lib/@angular/bundles/http.dev.js"></script>
+    <script src="lib/@angular/bundles/router.dev.js"></script>
+    <script src="lib/js/jquery.min.js"></script>
+    <script src="lib/js/typed.js"></script>
+    <script>
+      System.config({
+        packages: {
+          'app': {
+            main: 'main.js',
+            defaultExtension: 'js'
+          }
+        }
+      });
+      System.import ('app.js').then(null, console.error.bind(console));
+    </script>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-52901652-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol
+          ? 'https://ssl'
+          : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
 </html>
