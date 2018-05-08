@@ -36,8 +36,14 @@ export class PessoaService extends AbstractService<Pessoa>{
           return this.http.post(this.urlWeb + '/logar',body, requestOptions ).map(res=>{
             return res.json();
           })
-    }
+    } 
+    
+    public buscarPorTipo(tipo: number): Observable<Array<Pessoa>> {
+        return this.http.get(this.urlWeb + "/buscarPorTipo/"+tipo).map(res => {
+            return res.json();
+        });
 
+    }
     
 
 }

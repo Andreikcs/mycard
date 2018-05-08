@@ -1,24 +1,22 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Seja Bem-Vindo
-    </ion-title>
-  </ion-navbar>
-</ion-header>
-<!--
-<ion-content padding class="bg"> -->
-  <ion-content padding class="content">
-
-  <p>
-    Por favor nos informe o módulo de usuário o qual você pretende se cadastrar.</p>
-  <br>
-  <hr>
-  
-      <button ion-button block color="primary" round (click)="goToFisica()">Usuário</button>
-      <button ion-button block color="primary"round (click)="goToJuridica()">Empresarial</button>
-  <!--
-      <button ion-button block color="primary" round (click)="goToFisica()">Entrar</button>
-  -->
-
+<ion-content padding class="bg">
+  <ion-row justify-content-center>
+  </ion-row>
+  <ion-card class="centralizar">
+    <ion-card-content color="principal">
+      <ion-list no-lines color="branca">
+        <h1 class="h1">MyCard</h1>
+        <hr>
+        <br>
+       <h3 class="h2">
+         Para uma melhor experiência com os nossos serviços,
+           informe em qual tipo de usuário você deseja se cadastrar.  
+       </h3>
+     </ion-list>
+      <ion-list no-lines class="btn">
+      <button ion-button  (click)="goToFisica()"  ion-left block>PESSOAL</button>
+      <button ion-button  (click)="goToJuridica()" ion-left block>EMPRESARIAL</button>
+      </ion-list>
+  </ion-card-content>
+  </ion-card>
 
 </ion-content>

@@ -21,7 +21,7 @@ export class SetorService extends AbstractService<Setor>{
     }
  
     public buscarPorNomeSetor(setor: string): Observable<Array<Setor>> {
-        return this.http.post(this.urlWeb + "/buscarpornomesetor", setor).map(res => {
+        return this.http.get(this.urlWeb + "/buscarpornomesetor", setor).map(res => {
             return res.json();
         });
 

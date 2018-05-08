@@ -1,11 +1,12 @@
+<ion-content padding>
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      Minha Empresa
+    <ion-title> Para Minha Empresa
+      <ion-icon name=""></ion-icon>
     </ion-title>
   </ion-navbar>
-</ion-header>
-<ion-content padding>
+<ion-card>
+  <ion-card-content>
   <ion-item>
     <ion-label color="primary" floating>Nome</ion-label>
     <ion-input type="text" [(ngModel)]="pessoa.nome_razao"></ion-input>
@@ -13,7 +14,7 @@
   <ion-item>
     <ion-label color="primary" floating>CNPJ</ion-label>
     <ion-input type="text" [(ngModel)]="pessoa.cpf_cnpj"></ion-input>
-  </ion-item>
+  </ion-item> <!--
   <ion-item>
     <ion-label color="primary" floating>Endereço</ion-label>
     <ion-input type="text" [(ngModel)]="pessoa.endereco"></ion-input>
@@ -25,15 +26,16 @@
   <ion-item>
     <ion-label color="primary" floating>Bairro</ion-label>
     <ion-input type="text" [(ngModel)]="pessoa.bairro"></ion-input>
-  </ion-item>
+  </ion-item> -->
   <ion-list>
     <ion-item>
-      <ion-label>Cidade</ion-label>
-      <ion-select [(ngModel)]="pessoa.cidade">
+      <ion-label color="primary">Cidade</ion-label>
+       <ion-select [(ngModel)]="pessoa.cidade">
         <ion-option *ngFor="let cidade of cidades" [value]="cidade">{{cidade.nome}}</ion-option>
       </ion-select>
     </ion-item>
   </ion-list>
+  <!--
   <ion-item>
     <ion-label color="primary" floating>Tel. Comercial</ion-label>
     <ion-input type="text" [(ngModel)]="pessoa.telefone_comercial"></ion-input>
@@ -45,18 +47,24 @@
   <ion-item>
     <ion-label color="primary" floating>Skype</ion-label>
     <ion-input type="text" [(ngModel)]="pessoa.skype"></ion-input>
-  </ion-item>
-  <ion-item>
+  </ion-item> 
+  <ion-item> 
     <ion-label color="primary" floating>E-mail</ion-label>
     <ion-input type="text" [(ngModel)]="pessoa.email"></ion-input>
-  </ion-item>
+  </ion-item>  -->
   <ion-item>
     <ion-label color="primary" floating>Login</ion-label>
-    <ion-input type="text" [(ngModel)]="pessoa.login"></ion-input>
+    <ion-input type="text" [(ngModel)]="pessoa.email"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label color="primary" floating>Senha</ion-label>
     <ion-input type="password" [(ngModel)]="pessoa.senha"></ion-input>
-  </ion-item>
-  <button ion-button block color="primary" round (click)="goToSave()">Salvar</button>
+  </ion-item> <!--
+  <button ion-button block color="primary" round (click)="goToSave()">Salvar</button> -->
+  <br>
+  <button ion-button (click)="goToSave()"  ion-left block small>SALVAR</button>
+  <button ion-button (click)="goToHome()" ion-left block small>CANCELAR</button>
+</ion-card-content>
+</ion-card>
+</ion-header>
 </ion-content>

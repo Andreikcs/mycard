@@ -19,17 +19,16 @@
     <ion-icon name="construct" item-start color="primary"></ion-icon>
   </ion-item>
   <br>
-  <ion-list>
-    <ion-item>
-      <ion-label>Cidade</ion-label>
-      <ion-select [(ngModel)]="fsd">
-        <ion-option value="Universidade">Pato Branco</ion-option>
-        <ion-option value="Bancario">Francisco Beltrão</ion-option>
-        <ion-option value="OrtoBom">São Lourenço Do Oeste</ion-option>
-        <ion-option value="Hospital São Lucas">Curitiba</ion-option>
-      </ion-select>
-    </ion-item>
+    <ion-list>
+      <ion-item>
+        <ion-label color="primary">Cidade</ion-label>
+        <ion-select [(ngModel)]="pessoa.cidade">
+          <ion-option *ngFor="let cidade of cidades" [value]="cidade">{{cidade.nome}}</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
     <!-- Lista de Serviços -->
+  <ion-list>
     <ion-item>
       <ion-label>Serviços</ion-label>
       <ion-select [(ngModel)]="gaming">

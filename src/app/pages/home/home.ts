@@ -9,7 +9,7 @@ import { Pessoa } from './../../model/pessoa';
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html',
-  providers: [PessoaService]
+  providers: [PessoaService ]
 })
 
 
@@ -29,19 +29,14 @@ export class HomePage {
   public verificaTipo(){
     let pObject = localStorage.getItem("pessoa");
     let pessoa:Pessoa = JSON.parse(pObject);
-    // if (pessoa.tipo == 1) {
-    //   this.carregaPessoaFisica();
-    // } else {
-    //   this.carregaPessoaJuridica();
-    // }
   }    
 
 
   public goToLogar() {
-    this.pessoaservice.logar(this.pessoa.login, this.pessoa.senha).subscribe((pessoa) => {
+    //this.pessoaservice.logar(this.pessoa.login, this.pessoa.senha).subscribe((pessoa) => {
+   this.pessoaservice.logar(this.pessoa.email, this.pessoa.senha).subscribe((pessoa) => {
       if (pessoa != null) {
         localStorage.setItem("pessoa", JSON.stringify(pessoa));
-        //this.funcaoPosLogin(pessoa.tipo);
         this.goToMenu();
       }
     }, error => {

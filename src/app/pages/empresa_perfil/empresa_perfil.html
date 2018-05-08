@@ -27,14 +27,6 @@
       <ion-label color="primary" floating>Bairro</ion-label>
       <ion-input type="text"  [(ngModel)]="empresa.bairro"></ion-input>
     </ion-item>
-    <ion-list>
-        <ion-item>
-          <ion-label>Cidade</ion-label>
-          <ion-select [(ngModel)]="empresa.cidade">
-            <ion-option *ngFor="let cidade of cidades" [value]="cidade">{{cidade.nome}}</ion-option>
-          </ion-select>
-        </ion-item>
-    </ion-list>
     <ion-item>
       <ion-label color="primary" floating>Tel. Comercial</ion-label>
       <ion-input type="text" [(ngModel)]="empresa.telefone_comercial"></ion-input>
@@ -44,12 +36,8 @@
       <ion-input type="text" [(ngModel)]="empresa.celular"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label color="primary" floating>E-mail</ion-label>
-      <ion-input type="text"></ion-input>
-    </ion-item>
-    <ion-item>
       <ion-label color="primary" floating>Login</ion-label>
-      <ion-input type="text" [(ngModel)]="empresa.login"></ion-input>
+      <ion-input type="text" [(ngModel)]="empresa.email"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label color="primary" floating>Senha</ion-label>

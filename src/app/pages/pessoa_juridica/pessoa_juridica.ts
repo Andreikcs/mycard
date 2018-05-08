@@ -15,6 +15,7 @@ import { Cidade } from './../../model/cidade';
 })
 
 export class PessoaJuridicaPage {
+  
   public pessoa: Pessoa = new Pessoa();
 
   public cidades:Array<Cidade>;
@@ -33,12 +34,19 @@ public buscarCidades(){
 }
 
   public goToSave() {
-    this.pessoa.tipo = 2;
+   this.pessoa.tipo = 2;
     this.pessoaService.save(this.pessoa).subscribe((pes) => {
       if (pes != null) {
-        this.pessoa = pes;
+         this.pessoa = pes;
       }
     }, error => {
     });
   }
+
+  public goToHome() {
+    this.navCtrl.push(HomePage);
+  }
+
 }
+
+

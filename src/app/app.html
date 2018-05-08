@@ -1,18 +1,55 @@
 <ion-menu [content]="NAV">
   <ion-header>
-    <title>my card</title>
-  </ion-header >
-  <ion-content>
-     <img src="/assets/imgs/logo.png" alt="">
-     
-    <ion-list>
-      <button color="dark" ion-item *ngFor="let page of getPages()" (click)="goToPage(page.component)" menuClose>
+  </ion-header>
+  <ion-content padding class="content">
+    <ion-row>
+    </ion-row>
+      <ion-card class="circle">
+      <img src="/assets/imgs/mycard.png" style="margin:auto;">
+        </ion-card>
+    <ion-item class="teste">
+      
+      <ion-input type="text">
+      </ion-input>
+      <hr>
+    </ion-item>
+    <ion-list no-lines>
+      <button color="light" ion-item *ngFor="let page of getPages()" (click)="goToPage(page.component)" menuClose>
         <ion-icon item-left name="{{ page.icon }}"></ion-icon>
         {{page.titulo}}
       </button>
     </ion-list>
   </ion-content>
 </ion-menu>
-<ion-nav [root]="rootPage" #NAV></ion-nav>
+<ion-nav [root]="rootPage" #NAV></ion-nav> 
 
 
+
+
+
+
+
+
+
+
+
+
+<!--
+  <ion-content>
+     <img src="/assets/imgs/logo.png" alt=""> 
+  -->
+
+
+
+
+
+<!--
+    <ion-list>
+      <button color="light" ion-item *ngFor="let page of getPages()" (click)="goToPage(page.component)" menuClose>
+        <ion-icon item-left name="{{ page.icon }}"></ion-icon>
+        {{page.titulo}}
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu> 
+<ion-nav [root]="rootPage" #NAV></ion-nav> -->

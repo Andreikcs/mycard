@@ -10,8 +10,8 @@ import 'rxjs/add/operator/toPromise';
 export abstract class AbstractService<T>{
 
   protected protocolo: string = 'http';
-  protected ip: string = '192.168.201.16';
-  //protected ip: string = '192.168.202.53';
+  protected ip: string = '192.168.201.16'; //FADEP
+  //protected ip: string = '192.168.110.118';   //IXC
   protected porta: string = '8085';
   protected contextBase: string = 'mycard/rest/';
   protected url: string = this.protocolo + '://' + this.ip + ':' + this.porta + '/' + this.contextBase; 

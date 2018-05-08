@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+/*import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 @Component({
@@ -12,3 +12,11 @@ export class Menu {
         this.navCtrl.setRoot(Menu);
     }
 }
+
+========================================================
+
+ANALISAR E REMOVER NAO INTERFERIU EM NADA NO PROJETO 
+
+
+=========================================================
+*/

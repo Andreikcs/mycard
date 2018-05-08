@@ -5,7 +5,7 @@ import { PessoaJuridicaPage } from '../pessoa_juridica/pessoa_juridica';
 
 
 @Component({
-  selector: 'page-home',
+  selector: 'pessoa-css',
   templateUrl: 'pessoa.html'
 })
 export class PessoaPage {

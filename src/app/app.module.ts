@@ -22,8 +22,8 @@ import { EmpresaPerfilPage } from './pages/empresa_perfil/empresa_perfil';
 import { EmpresaHomePage } from './pages/empresa_home/empresa_home';
 import { EmpresaServicoPage } from './pages/empresa_servico/empresa_servico';
 import { EmpresaSetorPage } from './pages/empresa_setor/empresa_setor';
-
-
+import { EmpresaFuncionarioPage } from './pages/empresa_funcionario/empresa_funcionario';
+import { PerfilFuncionarioPage } from './pages/perfil_funcionario/perfil_funcionario';
 
 
 
@@ -44,7 +44,10 @@ import { EmpresaSetorPage } from './pages/empresa_setor/empresa_setor';
     EmpresaPerfilPage,
     EmpresaHomePage,
     EmpresaServicoPage,
-    EmpresaSetorPage
+    EmpresaSetorPage,
+    EmpresaFuncionarioPage,
+    PerfilFuncionarioPage
+    
   ],
   imports: [
     HttpModule,
@@ -68,7 +71,9 @@ import { EmpresaSetorPage } from './pages/empresa_setor/empresa_setor';
     EmpresaPerfilPage,
     EmpresaHomePage,
     EmpresaServicoPage,
-    EmpresaSetorPage
+    EmpresaSetorPage,
+    EmpresaFuncionarioPage,
+    PerfilFuncionarioPage
   
       ],
   providers: [
@@ -76,11 +81,7 @@ import { EmpresaSetorPage } from './pages/empresa_setor/empresa_setor';
     SplashScreen,
     JsonpModule,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    /*{
-       provide:Http, 
-       useFactory: httpFactory, 
-        deps:[XHRBackend,RequestOptions]
-      }*/ 
+
   ]
 })
 

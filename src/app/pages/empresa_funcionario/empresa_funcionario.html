@@ -1,0 +1,120 @@
+<ion-content padding>
+  <ion-header>
+    <ion-navbar>
+      <!--<button ion-button menuToggle> -->
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title> Cadastro de Funcionários
+        <ion-icon name=""></ion-icon>
+      </ion-title>
+    </ion-navbar>
+    <!-- GRID GERENCIADOR -->
+    <ion-grid>
+      <ion-row>
+        <ion-col col-2>
+          <div>
+          </div>
+        </ion-col>
+        <ion-col col-8>
+          <div>
+          </div>
+        </ion-col>
+        <ion-col col-2>
+          <div>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <!-- FINAL GRID GERENCIADOR -->
+    <ion-grid>
+      <!-- COLUNA INICIAL EM BRANCO-->
+      <ion-row>
+        <ion-col col-2>
+          <div>
+          </div>
+        </ion-col>
+        <!-- Coluna SERVICO-->
+        <ion-col col-8>
+          <div>
+              <ion-item>
+                <ion-label color="primary" floating>Nome</ion-label>
+                <ion-input type="text" [(ngModel)]="pessoa.nome_razao"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label color="primary" floating>Login</ion-label>
+                <ion-input type="text" [(ngModel)]="pessoa.email"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label color="primary" floating>Senha</ion-label>
+                <ion-input type="password" [(ngModel)]="pessoa.senha"></ion-input>
+              </ion-item>
+            <button ion-button block color="primary" round (click)="goToSave()">Salvar</button>
+     </div>
+        </ion-col>      
+      </ion-row>
+    </ion-grid>
+ <!-- GRID 2 -->
+
+    <ion-grid>
+      <ion-row>
+        <ion-col col-2>
+          <div>
+          </div>
+        </ion-col>
+        <ion-col col-8>
+          <div>
+            <ion-item>
+              <ion-icon name="contacts" item-start></ion-icon>
+               Gerenciar Funcionários           
+            </ion-item>
+             </div>
+            <div>                
+            </div>
+        </ion-col>
+        <ion-col col-2>
+          <div>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <!-- FINAL GRID GERENCIADOR -->
+    <ion-grid>
+      <!-- COLUNA INICIAL EM BRANCO-->
+      <ion-row>
+        <ion-col col-2>
+          <div>
+          </div>
+        </ion-col>
+        <!-- Coluna Funcionario-->
+        <ion-col col-4>
+          <div>
+            <ion-list>
+              <ion-item>
+                <ion-label>Lista de Funcionario</ion-label>
+                <ion-select [(ngModel)]="pessoa.nome_razao">
+                  <ion-option *ngFor="let funcionario of funcionarios" [value]="funcionario">{{funcionario.nome_razao}}</ion-option>
+                </ion-select>
+              </ion-item> 
+            </ion-list>
+            <button ion-button small block color="primary">Incluir</button>
+          </div>
+        </ion-col>
+        <!-- Coluna Setor-->
+        <ion-col col-4>
+          <div>
+              <ion-list>
+                <ion-item>
+                  <ion-label>Lista de Setores</ion-label>
+                  <ion-select [(ngModel)]="pessoa.cidade">
+                    <ion-option *ngFor="let cidade of cidades" [value]="cidade">{{cidade.nome}}</ion-option>
+                  </ion-select>
+                </ion-item>
+              </ion-list>
+              <button ion-button small block color="primary">Excluir</button>
+          </div>
+        </ion-col>  
+      </ion-row>
+    </ion-grid>
+  </ion-header>
+</ion-content>

@@ -1,13 +1,54 @@
-<ion-header>
-  <div>
-    <hr>
-  </div>
-</ion-header>
-<ion-content padding class="bg">
-  <ion-avatar item-start>
-    <img src="/assets/imgs/mycard.png" style="margin:auto;">
-  </ion-avatar>
-  <br>
+
+<ion-content padding class="content">
+    <ion-row justify-content-center>
+      <img src="/assets/imgs/mycard.png" style="margin:auto;">
+    </ion-row>
+  <ion-card>
+    <ion-card-content> 
+      <ion-list no-lines>
+        <ion-item>
+          <ion-label floating >Login</ion-label>
+          <ion-input type="text"   [(ngModel)]="pessoa.email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating >Senha</ion-label>
+          <ion-input type="password"  [(ngModel)]="pessoa.senha"></ion-input>
+        </ion-item>
+        <ion-item>
+          <button ion-button (click)="goToLogar()" ion-left block small>LOGIN</button>
+          <br>
+          <p>Sua Primeira Vez Aqui?</p>
+          <a>
+            <button ion-button (click)="goToPessoa()" ion-left block small>CADASTRAR-SE</button>
+          </a>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card> 
+</ion-content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+    
+    ORIGINAL
+  
+    <br>
   <div>
     <ion-item>
       <ion-label color="primary" floating>Login</ion-label>
@@ -17,21 +58,16 @@
       <ion-label color="facebook" floating>Senha</ion-label>
       <ion-input type="password" color="facebook" [(ngModel)]="pessoa.senha"></ion-input>
     </ion-item>
-    <!--
-<p></p>
-<button ion-button block round (click)="goToMenu()">Entrar</button>
-<p></p> -->
-
     <p></p>
     <button ion-button block round (click)="goToLogar()">Entrar</button>
     <p></p>
     <div>
       <button ion-button clear (click)="goToPessoa()">Cadastrar-se</button>
     </div>
-  </div>
-
+  </div> -->
+<!--
 </ion-content>
-
+-->
 <!--
 <ion-content padding>
   <ion-grid>

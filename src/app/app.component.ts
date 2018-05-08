@@ -17,6 +17,9 @@ import { EmpresaServicoPage } from './pages/empresa_servico/empresa_servico';
 import { EmpresaSetorPage } from './pages/empresa_setor/empresa_setor';
 import { PessoaService } from './services/pessoaservice';
 import { Pessoa } from './model/pessoa';
+/* Tela De Cadastro de Funcionarios*/
+import { EmpresaFuncionarioPage } from './pages/empresa_funcionario/empresa_funcionario'; 
+import { PerfilFuncionarioPage } from './pages/perfil_funcionario/perfil_funcionario';
 
 
 
@@ -40,18 +43,10 @@ export class MyApp {
 
   public verificarLogin: Function;
 
-  constructor(public platform: Platform) {
-    
+  constructor(public platform: Platform) {  
     let me = this;
-    
-    // this.platform.ready().then(()  => {
-    //   this.verificarLogin = (tipo) => {
-       
-    // });
-
   }
-
-
+ 
   public goToPage(page) {
     this.nav.setRoot(page);
   } 
@@ -59,11 +54,18 @@ export class MyApp {
   public getPages():Array<any>{
     let pObject = localStorage.getItem("pessoa");
     let pessoa: Pessoa = JSON.parse(pObject);
-    if (pessoa.tipo == 1) {  
-      this.carregaPessoaFisica();
-    } else if (pessoa.tipo == 2){
-      this.rootPage = EmpresaHomePage;
-      this.carregaPessoaJuridica();
+    if (pessoa != null) {
+      if (pessoa.tipo == 1) {
+        this.carregaPessoaFisica(); 
+      } else if (pessoa.tipo == 2) {
+        this.rootPage = EmpresaHomePage;
+        this.carregaPessoaJuridica();
+      } else if (pessoa.tipo == 3) {
+        this.rootPage = PerfilFuncionarioPage;
+        this.carregaPessoaFuncionario();
+      }
+    } else {
+      this.rootPage = HomePage;
     }
     return this.pages;
   }
@@ -91,9 +93,21 @@ export class MyApp {
       { titulo: 'Minha Empresa', component: EmpresaPerfilPage, icon: 'podium' },
       { titulo: 'Meus Setores', component: EmpresaSetorPage, icon: 'filing' },
       { titulo: 'Meus Serviços', component: EmpresaServicoPage, icon: 'build' },
-      //  { titulo: 'Configurações', component: ConfiguracaoPage, icon: 'settings' },
+      { titulo: 'Funcionários', component: EmpresaFuncionarioPage, icon: 'person' },
       { titulo: 'Logout', component: HomePage, icon: 'power' }
     ];
 
   }
+
+  /***************  Perfil Funcionario  **********************/
+  public carregaPessoaFuncionario() {
+    this.rootPage = EmpresaHomePage;
+    this.pages = [
+      { titulo: 'Dashboard', component: PerfilFuncionarioPage, icon: 'desktop' },
+      { titulo: 'Logout', component: HomePage, icon: 'power' }
+    ];
+
+  }
+
+
 }

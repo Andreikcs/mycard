@@ -11,7 +11,7 @@ import { HomePage } from '../home/home';
 export class EmpresaHomePage {
 
   constructor(public navCtrl: NavController) {
-
+   
   }
 
   public goToLogin() {

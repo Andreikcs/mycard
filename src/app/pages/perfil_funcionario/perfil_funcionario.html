@@ -1,0 +1,100 @@
+<ion-content padding>
+  <ion-header>
+    <ion-navbar>
+      <!--<button ion-button menuToggle> -->
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Dashboard<ion-icon name=""></ion-icon></ion-title>
+    </ion-navbar> 
+    <!-- GRID GERENCIADOR -->
+    <ion-grid>
+      <ion-row>
+    <ion-col col-2>
+      <div>
+      </div>
+    </ion-col>
+    <ion-col col-8>
+      <div>
+        <button ion-button small block>Listar Meus Serviços</button>
+      </div>
+    </ion-col>
+    <ion-col col-4>
+      <div>  
+      </div>
+    </ion-col>
+    </ion-row>
+    </ion-grid>
+<ion-grid>
+  <ion-row>
+    <ion-col col-2>
+      <div>
+      </div>
+    </ion-col>
+    <ion-col col-8>
+      <div>
+        <ion-item>
+          <ion-icon name="card" item-start></ion-icon>
+           Gerenciador de Senhas
+        </ion-item>
+      </div>
+    </ion-col>
+    <ion-col col-2>
+      <div>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+    <!-- FINAL GRID GERENCIADOR -->
+    <ion-grid>
+      <!-- COLUNA INICIAL EM BRANCO-->
+      <ion-row>
+        <ion-col col-2> 
+          <div>
+          </div>
+        </ion-col>
+        <!-- Coluna SERVICO-->
+        <ion-col col-2>
+          <div>
+            <ion-list>
+              <ion-item>
+                <ion-label stacked>Serviço</ion-label>
+                <ion-input type="text"></ion-input>
+              </ion-item>
+            </ion-list>
+          </div>
+        </ion-col>
+        <ion-col col-2>
+          <div>
+            <ion-list>
+              <ion-item>
+                <ion-label stacked>Setor</ion-label>
+                <ion-input type="text"></ion-input>
+              </ion-item>
+            </ion-list>
+          </div>
+        </ion-col>
+          <ion-col col-2>
+            <div>
+              <ion-list>
+                <ion-item>
+                  <ion-label stacked>Senha Atual</ion-label>
+                  <ion-input type="text"></ion-input>
+                </ion-item>
+              </ion-list>
+            </div>
+          </ion-col>
+        <ion-col col-2>
+          <div>
+          <button ion-button small block ion-button icon-right>Próxima
+            <ion-icon name="md-fastforward"></ion-icon>
+          </button>     
+          <button ion-button small block ion-button icon-right>Imprimir
+            <ion-icon name="images"></ion-icon>
+          </button>
+              </div>
+        </ion-col>   
+      </ion-row>
+    </ion-grid>
+  </ion-header>
+</ion-content>
