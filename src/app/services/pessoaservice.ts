@@ -23,11 +23,11 @@ export class PessoaService extends AbstractService<Pessoa>{
         return this.http.get(this.urlWeb+"/pedirSenha");
     }
 
-    public logar(login:string, senha:string):Observable<any> {
+    public logar(email:string, senha:string):Observable<any> {
         let header = new Headers();
         header.append('Content-Type', 'application/x-www-form-urlencoded');
         let urlSearch = new URLSearchParams();
-        urlSearch.append('login', login);
+        urlSearch.append('email', email);
         urlSearch.append('senha', senha);
         let body = urlSearch.toString();
         let requestOptions =  new RequestOptions({

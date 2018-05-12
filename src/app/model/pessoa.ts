@@ -1,6 +1,7 @@
 import { Cidade } from './cidade';
+import { AbstractEntity } from './abstractentity';
 
-export class Pessoa{
+export class Pessoa extends AbstractEntity{
 
 
     public tipo: number; 
@@ -20,6 +21,8 @@ export class Pessoa{
 
     public  login:string; 
     public  senha:string;
+
+    private caixa:number;
 
 
 }

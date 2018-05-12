@@ -25,6 +25,9 @@ import { EmpresaSetorPage } from './pages/empresa_setor/empresa_setor';
 import { EmpresaFuncionarioPage } from './pages/empresa_funcionario/empresa_funcionario';
 import { PerfilFuncionarioPage } from './pages/perfil_funcionario/perfil_funcionario';
 
+/*---- MAK --- */
+import { AppMaskerModule } from 'brmasker-ionic';
+
 
 
 
@@ -53,7 +56,8 @@ import { PerfilFuncionarioPage } from './pages/perfil_funcionario/perfil_funcion
     HttpModule,
     JsonpModule,
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AppMaskerModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

@@ -4,7 +4,7 @@ import { HomePage } from '../home/home';
 
 
 @Component({
-  selector: 'page-home',
+  selector: 'empresahome-css',
   templateUrl: 'empresa_home.html'
 })
 

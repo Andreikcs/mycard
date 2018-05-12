@@ -1,57 +1,42 @@
 <ion-content padding>
   <ion-header>
     <ion-navbar>
-      <!--<button ion-button menuToggle> -->
       <button ion-button menuToggle>
         <ion-icon name="menu"></ion-icon>
       </button>
-      <ion-title> Dashboard<ion-icon name=""></ion-icon></ion-title>
-    </ion-navbar> 
-    <!-- GRID GERENCIADOR -->
-    <ion-grid>
-      <ion-row>
-    <ion-col width-25>
-      <div>
-      </div>
-    </ion-col>
-   <!-- <ion-col col-8> -->
-     <ion-col width-25>
-      <div>
-        <button ion-button small block>Gerenciar Serviços</button>
-      </div>
-    </ion-col>
-    <ion-col width-25>
-      <div>  
-      </div>
-    </ion-col>
-    </ion-row> 
-        </ion-grid>
-    <!-- FINAL GRID GERENCIADOR -->
-    <ion-grid>
-      <!-- COLUNA INICIAL EM BRANCO-->
-      <ion-row>
-        <ion-col col-2> 
-          <div>
-          </div>
-        </ion-col>
-        <!-- Coluna SERVICO-->
-        <ion-col col-8> 
-        <div> 
+      <ion-title> Dashboard
+      </ion-title>
+    </ion-navbar>
+    <ion-item>
+
       <ion-list>
-        <ion-item>
-          <ion-thumbnail item-start>
-          </ion-thumbnail>
-          <h2> Nome do Serviço</h2>
-          <p>nome do Setor</p>
-        <ion-item>
-          <ion-label> Sam</ion-label>
-          <ion-toggle disabled checked="false"></ion-toggle>
-        </ion-item>
-        </ion-item>
+        <ion-list-header>
+          Gerenciar
+          <button ion-button color="primary" clear item-end>
+            <ion-icon name='folder-open'></ion-icon>
+          </button>
+          <button ion-button color="primary" clear item-end>
+            <ion-icon name='md-checkmark'></ion-icon>
+          </button>
+          <button ion-button color="danger" clear item-end>
+            <ion-icon name='trash'></ion-icon>
+          </button>
+        </ion-list-header>
+
       </ion-list>
-         </div>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
+
+    </ion-item>
+ 
+      <ion-list radio-group no-lines>
+
+        <ion-item no-lines>
+          <ion-label>Go</ion-label>
+          <ion-radio checked="false" value="go"></ion-radio>
+        </ion-item>
+
+  
+      </ion-list>
+
   </ion-header>
+
 </ion-content>

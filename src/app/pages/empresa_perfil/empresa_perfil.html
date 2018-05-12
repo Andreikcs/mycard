@@ -25,7 +25,7 @@
     </ion-item>
     <ion-item>
       <ion-label color="primary" floating>Bairro</ion-label>
-      <ion-input type="text"  [(ngModel)]="empresa.bairro"></ion-input>
+      <ion-input type="text" [(ngModel)]="empresa.bairro"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label color="primary" floating>Tel. Comercial</ion-label>
@@ -43,6 +43,10 @@
       <ion-label color="primary" floating>Senha</ion-label>
       <ion-input type="text" [(ngModel)]="empresa.senha"></ion-input>
     </ion-item>
-    <button ion-button block color="primary" round (click)="goToSave()">Salvar e Continuar</button>
+    <ion-item no-lines>
+      <button ion-button color="green" clear item-end (click)="goToSave()">
+        <ion-icon name='md-checkmark'></ion-icon>
+      </button>
+    </ion-item>
   </ion-header>
 </ion-content>

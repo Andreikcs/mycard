@@ -19,17 +19,22 @@ import { SetorService } from './../../services/setor-service';
 export class EmpresaServicoPage {
 
   public servico: Servico = new Servico();
+ 
+   
+  public setores: Array<Setor>;
+  public setor: Setor = new Setor();
 
- public setores: Array<Setor>;
+   
 
   constructor(public navCtrl: NavController,
     private servicoService: ServicoService,
     private setorService: SetorService) {
-    this.buscarSetor();
+
+    this.getSetores();
 
   }
 
-  public buscarSetor() {
+  public getSetores() {
     this.setorService.buscarPorNomeSetor("").subscribe((lista: Setor[]) => {
       this.setores = lista;
     })
@@ -37,6 +42,11 @@ export class EmpresaServicoPage {
 
 
   public goToSave() {
+    let objPessoa = localStorage.getItem("pessoa");
+    let pessoa = JSON.parse(objPessoa);
+    this.servico.empresa = pessoa;
+    this.servico.setor = this.setor;
+
 
     this.servicoService.save(this.servico).subscribe((pes) => {
 

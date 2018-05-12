@@ -11,14 +11,14 @@
       <ion-label color="primary" floating>Categoria Do Serviço</ion-label>
       <ion-input type="text" [(ngModel)]="servico.tipo_servico"></ion-input>
     </ion-item>
-  <ion-list>
-    <ion-item>
-      <ion-label>Setor</ion-label>
-      <ion-select [(ngModel)]="servico.setor">
-        <ion-option *ngFor="let setor of setor" [value]="setor">{{setor.setor}}</ion-option>
-      </ion-select>
-    </ion-item>
-  </ion-list>
+    <ion-list>
+      <ion-item>
+        <ion-label>Lista de Setores</ion-label>
+        <ion-select [(ngModel)]="setor" color="primary">
+          <ion-option color="primary" *ngFor="let setor of setores" [value]="setor">{{setor.setor}}</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
     <ion-item>
       <ion-label color="primary" floating>Descrição</ion-label>
       <ion-input type="text" [(ngModel)]="servico.descricao"></ion-input>
@@ -26,15 +26,7 @@
     <ion-item>
       <ion-label color="primary" floating>Atendimento</ion-label>
       <ion-input type="text" [(ngModel)]="servico.atendimento"></ion-input>
-    </ion-item><!--
-    <ion-item>
-      <ion-label color="primary" floating>Aberto A Partir Das:</ion-label>
-      <ion-input type="text" [(ngModel)]="servico.hora_abertura"></ion-input>
     </ion-item>
-    <ion-item>
-      <ion-label color="primary" floating>Fechamos As:</ion-label>
-      <ion-input type="text" [(ngModel)]="servico.hora_fecha"></ion-input>
-    </ion-item> -->
     <ion-item>
       <ion-label color="primary" floating>Observação</ion-label>
       <ion-input type="text" [(ngModel)]="servico.obs"></ion-input>
@@ -43,6 +35,6 @@
       <ion-label color="primary" floating>Observação 2</ion-label>
       <ion-input type="text" [(ngModel)]="servico.obs2"></ion-input>
     </ion-item>
-    <button ion-button block color="primary" round (click)="goToSave()">Salvar e Continuar</button>
+    <button ion-button block small (click)="goToSave()">Salvar</button>
   </ion-header>
 </ion-content>

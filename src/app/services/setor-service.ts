@@ -3,9 +3,11 @@ import { Observable  } from 'rxjs/Observable';
 import { Http, RequestOptions, Headers } from '@angular/http'; 
 import { AbstractService } from './abstract-service';
 import { Setor } from '../model/setor';
+import { Cidade } from './../model/cidade';
 /*
  1 - importar a classe do model
- 2-  criar a classe service
+
+criar a classe service
  3- 
 */
 
@@ -21,7 +23,14 @@ export class SetorService extends AbstractService<Setor>{
     }
  
     public buscarPorNomeSetor(setor: string): Observable<Array<Setor>> {
-        return this.http.get(this.urlWeb + "/buscarpornomesetor", setor).map(res => {
+        return this.http.post(this.urlWeb + "/buscarpornomesetor", setor).map(res => {
+            return res.json();
+        });
+
+    }
+
+    public buscarPorCidade(cidade: Cidade): Observable<Array<Setor>> {
+        return this.http.post(this.urlWeb + "/buscarporcidade", cidade.id).map(res => {
             return res.json();
         });
 

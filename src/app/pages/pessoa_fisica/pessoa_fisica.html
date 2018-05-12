@@ -1,46 +1,37 @@
 <ion-content padding>
-  <ion-card>
-    <ion-card-header>
-      <ion-title>  
-      </ion-title>
-    </ion-card-header>
-  </ion-card>
-  <!--
-  <form [formGroup]="formgroup"> -->
-     <ion-list no-lines>
-    <ion-item >
-      <ion-label color="danger" floating>*Nome</ion-label>
-      <ion-input [(ngModel)]="pessoa.nome_razao" formControlName="nome" type="text"  clearInput clearOnEdit="false" >
-      </ion-input>
-    </ion-item>
-  <!-- Validade NOME 
-<ion-item color="danger"  *ngIf="nome.hasError('required') && nome.touched" >
-<h6> Ops! Campo Obrigátorio</h6> 
-</ion-item>-->
-    <ion-item>
-      <ion-label color="danger" floating>*E-mail</ion-label>
-      <ion-input [(ngModel)]="pessoa.email" formControlName="email" type="email" clearInput clearOnEdit="false">
-      </ion-input>
-    </ion-item> <!--
-    <ion-item  color="danger" *ngIf="email.hasError('required') && email.touched">
-      <h6> Ops! Campo Obrigátorio</h6>
-    </ion-item> -->
-       <ion-item>
-      <ion-label color="danger" floating>*Senha</ion-label>
-      <ion-input [(ngModel)]="pessoa.senha" formControlName="senha" type="password" clearInput clearOnEdit="false">
-      </ion-input>
-    </ion-item > <!--
-    <ion-item color="danger" *ngIf="senha.hasError('required') && senha.touched">
-      <h6> Ops! Campo Obrigátorio</h6>
-    </ion-item>  -->
-    <br>
+  
+  <form [formGroup]="formgroup">
+    <ion-list no-lines>
+      <ion-item>
+        <ion-label color="danger" floating>*Nome</ion-label>
+        <ion-input [(ngModel)]="pessoa.nome_razao" formControlName="nome" type="text" clearInput clearOnEdit="false">
+        </ion-input>
+      </ion-item>
+      <!-- Validade NOME -->
+      <ion-item color="danger" *ngIf="nome.hasError('required') && nome.touched">
+        <h6> Ops! Campo Obrigátorio</h6>
+      </ion-item>
+      <ion-item>
+        <ion-label color="danger" floating>*E-mail</ion-label>
+        <ion-input [(ngModel)]="pessoa.email" formControlName="email" type="email" clearInput clearOnEdit="false">
+        </ion-input>
+      </ion-item>
+      <ion-item color="danger" *ngIf="email.hasError('required') && email.touched">
+        <h6> Ops! Campo Obrigátorio</h6>
+      </ion-item>
+      <ion-item>
+        <ion-label color="danger" floating>*Senha</ion-label>
+        <ion-input [(ngModel)]="pessoa.senha" formControlName="senha" type="password" clearInput clearOnEdit="false">
+        </ion-input>
+      </ion-item>
+      <ion-item color="danger" *ngIf="senha.hasError('required') && senha.touched">
+        <h6> Ops! Campo Obrigátorio</h6>
+      </ion-item>
+      <br>
       <button ion-button (click)="goToSave()" ion-left block small [disabled]="!pessoa.nome_razao || !pessoa.email || !pessoa.senha ">SALVAR</button>
-      <button ion-button (click)="goToHome()" ion-left block small>CANCELAR</button>
-  </ion-list>
-   
-    <!--</form>
-    <div ng-show="formgroup.pessoa.senha.$invalid && formgroup.senha.$dirty">
-      preencha a senha
-    </div> -->
+      <button ion-button (click)="goToPessoa()" ion-left block small>CANCELAR</button>
+    </ion-list>
+
+  </form>
 
 </ion-content>

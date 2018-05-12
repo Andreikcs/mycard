@@ -1,4 +1,6 @@
-export class Cidade{
+import { AbstractEntity } from './abstractentity';
+
+export class Cidade extends AbstractEntity{
   
     public nome:string;
     public cep:number;

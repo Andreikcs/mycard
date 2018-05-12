@@ -1,6 +1,7 @@
 import { DateTime } from "ionic-angular";
+import { AbstractEntity } from './abstractentity';
 
-export class Servico{
+export class Servico extends AbstractEntity{
      
     /* FK Empresa */
     public id_empresa: number; 

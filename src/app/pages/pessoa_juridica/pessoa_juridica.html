@@ -1,70 +1,50 @@
 <ion-content padding>
-<ion-header>
-  <ion-navbar>
-    <ion-title> Para Minha Empresa
-      <ion-icon name=""></ion-icon>
-    </ion-title>
-  </ion-navbar>
-<ion-card>
-  <ion-card-content>
-  <ion-item>
-    <ion-label color="primary" floating>Nome</ion-label>
-    <ion-input type="text" [(ngModel)]="pessoa.nome_razao"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label color="primary" floating>CNPJ</ion-label>
-    <ion-input type="text" [(ngModel)]="pessoa.cpf_cnpj"></ion-input>
-  </ion-item> <!--
-  <ion-item>
-    <ion-label color="primary" floating>Endereço</ion-label>
-    <ion-input type="text" [(ngModel)]="pessoa.endereco"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label color="primary" floating>Número</ion-label>
-    <ion-input type="text" [(ngModel)]="pessoa.numero"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label color="primary" floating>Bairro</ion-label>
-    <ion-input type="text" [(ngModel)]="pessoa.bairro"></ion-input>
-  </ion-item> -->
-  <ion-list>
-    <ion-item>
-      <ion-label color="primary">Cidade</ion-label>
-       <ion-select [(ngModel)]="pessoa.cidade">
-        <ion-option *ngFor="let cidade of cidades" [value]="cidade">{{cidade.nome}}</ion-option>
-      </ion-select>
-    </ion-item>
-  </ion-list>
-  <!--
-  <ion-item>
-    <ion-label color="primary" floating>Tel. Comercial</ion-label>
-    <ion-input type="text" [(ngModel)]="pessoa.telefone_comercial"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label color="primary" floating>Celular</ion-label>
-    <ion-input type="text" [(ngModel)]="pessoa.celular"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label color="primary" floating>Skype</ion-label>
-    <ion-input type="text" [(ngModel)]="pessoa.skype"></ion-input>
-  </ion-item> 
-  <ion-item> 
-    <ion-label color="primary" floating>E-mail</ion-label>
-    <ion-input type="text" [(ngModel)]="pessoa.email"></ion-input>
-  </ion-item>  -->
-  <ion-item>
-    <ion-label color="primary" floating>Login</ion-label>
-    <ion-input type="text" [(ngModel)]="pessoa.email"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label color="primary" floating>Senha</ion-label>
-    <ion-input type="password" [(ngModel)]="pessoa.senha"></ion-input>
-  </ion-item> <!--
-  <button ion-button block color="primary" round (click)="goToSave()">Salvar</button> -->
-  <br>
-  <button ion-button (click)="goToSave()"  ion-left block small>SALVAR</button>
-  <button ion-button (click)="goToHome()" ion-left block small>CANCELAR</button>
-</ion-card-content>
-</ion-card>
-</ion-header>
+  <form [formGroup]="myform">
+    <ion-list no-lines>
+      <ion-item>
+        <ion-label color="primary" floating>Nome</ion-label>
+        <!--<ion-input type="text" [(ngModel)]="pessoa.nome_razao" formControlName="nome" clearInput clearOnEdit="false"></ion-input> -->
+        <ion-input type="text" [(ngModel)]="pessoa.nome_razao" formControlName="nome"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary" floating>CNPJ</ion-label>
+        <!--  <ion-input type="text" [(ngModel)]="pessoa.cpf_cnpj" formControlName="cnpj" clearInput clearOnEdit="false"></ion-input>-->
+        <ion-input type="text" [(ngModel)]="pessoa.cpf_cnpj" formControlName="cnpj" [brmasker]="{mask:'99.999.999/9999-99', len:18}"></ion-input>
+      </ion-item>
+      <div>
+        <ion-list>
+          <ion-item>
+            <ion-label color="primary">Cidade</ion-label>
+            <ion-select [(ngModel)]="pessoa.cidade" [ngModelOptions]="{standalone: true}">
+              <ion-option *ngFor="let cidade of cidades" formControlName="cidade" [value]="cidade" ngDefaultControl>{{cidade.nome}}</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+      </div>
+
+      <ion-item>
+        <ion-label color="primary" floating>Login</ion-label>
+        <!-- <ion-input type="text" [(ngModel)]="pessoa.email" formControlName="email" clearInput clearOnEdit="false"></ion-input>-->
+        <ion-input type="text" [(ngModel)]="pessoa.email" formControlName="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" floating>Senha</ion-label>
+        <!--<ion-input type="password" [(ngModel)]="pessoa.senha" formControlName="senha" clearInput clearOnEdit="false"></ion-input>-->
+        <ion-input type="password" [(ngModel)]="pessoa.senha" formControlName="senha"></ion-input>
+      </ion-item>
+
+      <ion-item no-lines>
+
+        <button ion-button color="primary" clear item-end (click)="goToSave()" [disabled]="!pessoa.nome_razao || !pessoa.cpf_cnpj || !pessoa.cidade || !pessoa.email || !pessoa.senha">
+          <ion-icon name='md-checkmark'></ion-icon>
+        </button>
+        <button ion-button color="danger" clear item-end (click)="goToPessoa()" [disabled]="!pessoa.nome_razao || !pessoa.cpf_cnpj || !pessoa.cidade || !pessoa.email || !pessoa.senha">
+          <ion-icon name='md-close'></ion-icon>
+        </button>
+
+      </ion-item>
+    </ion-list>
+  </form>
+
 </ion-content>

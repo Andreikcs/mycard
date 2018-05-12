@@ -14,16 +14,21 @@ import { Setor } from '../../model/setor';
 
 export class EmpresaFuncionarioPage {
 
-  public pessoa: Pessoa = new Pessoa();
   public setores: Array<Setor>;
+  public setor: Setor = new Setor();
+
+  public pessoa: Pessoa = new Pessoa();
   public funcionarios: Array<Pessoa>
 
   constructor(public navCtrl: NavController,
     private pessoaService: PessoaService,
     private setorService: SetorService) {
 
+    this.getSetores();
+
     this.getFuncionarios();
   }
+
 
   public goToSave() {
     this.pessoa.tipo = 3;
@@ -44,6 +49,8 @@ export class EmpresaFuncionarioPage {
   }
 
   public getSetores() {
-
+    this.setorService.buscarPorNomeSetor("").subscribe((lista: Setor[]) => {
+      this.setores = lista;
+    })
   }
 }

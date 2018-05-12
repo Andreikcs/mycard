@@ -1,8 +1,11 @@
 import { DateTime } from "ionic-angular";
 import { Empresa } from './empresa';
 import { Setor } from './setor';
+import { AbstractEntity } from './abstractentity';
 
-export class Servico{
+
+
+export class Servico extends AbstractEntity{
 
     public tipo_servico: string;
     public descricao: string;

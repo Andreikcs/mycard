@@ -12,16 +12,19 @@ export abstract class AbstractService<T>{
   protected protocolo: string = 'http';
   protected ip: string = '192.168.201.16'; //FADEP
   //protected ip: string = '192.168.110.118';   //IXC
+  //protected ip: string = '192.168.0.117'; //CASA
+  // protected ip: string = '127.0.0.1'; //localhost
+
   protected porta: string = '8085';
   protected contextBase: string = 'mycard/rest/';
-  protected url: string = this.protocolo + '://' + this.ip + ':' + this.porta + '/' + this.contextBase; 
-  protected urlWeb:string = '';
+  protected url: string = this.protocolo + '://' + this.ip + ':' + this.porta + '/' + this.contextBase;
+  protected urlWeb: string = '';
 
   constructor(protected http: Http) {
     this.urlWeb = this.url + this.getWebService();
   }
 
-  public abstract getWebService():string;
+  public abstract getWebService(): string;
 
   public findAll(): Observable<Array<T>> {
     return this.http.get(this.urlWeb).map(res => {
@@ -29,7 +32,7 @@ export abstract class AbstractService<T>{
     });
   }
 
- 
+
   public findById(id: number): Observable<T> {
     return this.http.get(this.urlWeb + "/" + id).map(res => {
       return res.json();
@@ -43,8 +46,8 @@ export abstract class AbstractService<T>{
   }
 
   public save(obj: T): Observable<T> {
-     //return this.http.post(this.urlWeb + "/salvar", obj).then(res => {
-      return this.http.post(this.urlWeb + "/salvar", obj).map(res => {
+    //return this.http.post(this.urlWeb + "/salvar", obj).then(res => {
+    return this.http.post(this.urlWeb + "/salvar", obj).map(res => {
       return res.json();
     });
   }

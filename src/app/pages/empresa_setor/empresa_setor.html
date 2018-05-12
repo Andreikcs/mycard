@@ -1,16 +1,25 @@
 <ion-content padding>
   <ion-header>
     <ion-navbar>
-      <!--<button ion-button menuToggle> -->
+
       <button ion-button menuToggle>
         <ion-icon name="menu"></ion-icon>
       </button>
-      <ion-title>Cadastro De Novo Setor</ion-title>
+      <ion-title>Setor</ion-title>
     </ion-navbar>
     <ion-item>
       <ion-label color="primary" floating>Nome</ion-label>
-      <ion-input type="text"  [(ngModel)]="setor.setor"></ion-input>
+      <ion-input type="text" [(ngModel)]="setor.setor"></ion-input>
     </ion-item>
-      <button ion-button block color="primary" round (click)="goToSave()">Salvar</button>
-    </ion-header>
+    <ion-item no-lines>
+
+      <button ion-button color="primary" clear item-end (click)="goToSave()" [disabled]="!setor.setor">
+        <ion-icon name='md-checkmark'></ion-icon>
+      </button>
+      <button ion-button color="danger" clear item-end [disabled]="!setor.setor">
+        <ion-icon name='md-close'></ion-icon>
+      </button>
+
+    </ion-item>
+  </ion-header>
 </ion-content>

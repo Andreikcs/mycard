@@ -21,12 +21,31 @@
   <br>
     <ion-list>
       <ion-item>
-        <ion-label color="primary">Cidade</ion-label>
-        <ion-select [(ngModel)]="pessoa.cidade">
+        <ion-label color="primary">Cidade:</ion-label>
+        <ion-select [(ngModel)]="cidade" (ionChange)="getSetores()">
           <ion-option *ngFor="let cidade of cidades" [value]="cidade">{{cidade.nome}}</ion-option>
         </ion-select>
       </ion-item>
     </ion-list>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Lista de Setores</ion-label>
+      <ion-select [(ngModel)]="setor.setor">
+        <ion-option *ngFor="let setor of setores" [value]="setor">{{setor.setor}}</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+      <ion-list>
+        <ion-item>
+          <ion-label>Empresa:</ion-label>
+          <ion-select [(ngModel)]="pessoa">
+            <ion-option *ngFor="let empresa of empresas" [value]="empresa">{{empresa.nome_razao}}</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+
     <!-- Lista de Serviços -->
   <ion-list>
     <ion-item>
@@ -39,32 +58,19 @@
       </ion-select>
     </ion-item>
     <!-- Lista de Setores -->
-    <ion-item>
-      <ion-label>Setor</ion-label>
-      <ion-select [(ngModel)]="gaming">
-        <ion-option value="Universidade">Padis</ion-option>
-        <ion-option value="Bancario">Financeiro</ion-option>
-        <ion-option value="OrtoBom">Clareamento</ion-option>
-        <ion-option value="Hospital São Lucas">Ortopedista</ion-option>
-      </ion-select>
-    </ion-item>
-    <br>
-    <br>
   
+    <br>
+    <br>
+
     <ion-item>
       <ion-label>Gerenciador de Tarefas</ion-label>
       <ion-icon name="analytics" item-start color="primary" end></ion-icon>
     </ion-item>
     <div>
-      <!-- div icones MAPA ATENDIMENTO -->
       <ion-item>
         <ion-list>
           <ion-item>
-            <button ion-button clear (click)="goToSenha()">Gerar Senha</button><!--
-            <button ion-button clear (click)="goToAtendimento()" class="animation">Cadastrar-se</button> -->
-           <!-- <br>
-            <button ion-button clear>Ver No Mapa</button>
-            <br> -->
+            <button ion-button clear (click)="goToSenha()">Gerar Senha</button>       
             <br>
             <button ion-button clear (click)="goToAtendimento()">Informações</button>
           </ion-item>

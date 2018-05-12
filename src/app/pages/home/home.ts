@@ -33,7 +33,7 @@ export class HomePage {
 
 
   public goToLogar() {
-    //this.pessoaservice.logar(this.pessoa.login, this.pessoa.senha).subscribe((pessoa) => {
+   // this.pessoaservice.logar(this.pessoa.login, this.pessoa.senha).subscribe((pessoa) => {
    this.pessoaservice.logar(this.pessoa.email, this.pessoa.senha).subscribe((pessoa) => {
       if (pessoa != null) {
         localStorage.setItem("pessoa", JSON.stringify(pessoa));
